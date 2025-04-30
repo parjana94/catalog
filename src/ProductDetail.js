@@ -20,10 +20,15 @@ const ProductDetail = () => {
     return <div className="loading">Loading...</div>;
   }
 
+  // გადააქცევს \n-ით გამოყოფილ ტექსტს მრავალ ხაზად JSX-ში
+  const formattedDescription = product.description
+    .split('\n')
+    .map((line, index) => <p key={index}>{line}</p>);
+
   return (
     <div className="product-detail-container">
       <div className="product-detail">
-        {/* Main Image */}
+        {/* Images */}
         <div className="product-images">
           <div className="main-image-container">
             <img
@@ -33,7 +38,6 @@ const ProductDetail = () => {
             />
           </div>
 
-          {/* Thumbnail Images */}
           <div className="thumbnail-images">
             {[product.image1, product.image2, product.image3, product.image4].map(
               (img, index) =>
@@ -50,22 +54,17 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        {/* Product Details */}
+        {/* Details */}
         <div className="product-details">
-          <h1>{product.name}</h1>
-          <p className="product-description">{product.description}</p>
-
-          {/* Contact Button */}
-          <a
-            href={`tel:${product.contactNumber}`}
-            className="contact-button"
-          >
+          <h1 className="product-title">{product.name}</h1>
+          <div className="product-description">{formattedDescription}</div>
+          <a href={`tel:${product.contactNumber}`} className="contact-button">
             დარეკვა
           </a>
         </div>
       </div>
 
-      {/* Lightbox: Enlarged Image */}
+      {/* Lightbox */}
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
           <img src={selectedImage} alt="Enlarged View" />

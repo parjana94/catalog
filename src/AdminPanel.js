@@ -13,6 +13,7 @@ const AdminPanel = () => {
     image2: '',
     image3: '',
     image4: '',
+    contactNumber: '',
   });
 
   const handleChange = (e) => {
@@ -39,6 +40,7 @@ const AdminPanel = () => {
         image2: '',
         image3: '',
         image4: '',
+        contactNumber: '',
       });
     } catch (error) {
       console.error('დამატების შეცდომა:', error);
@@ -61,8 +63,19 @@ const AdminPanel = () => {
         </div>
 
         <div>
-          <label htmlFor="description">სრული აღწერა:</label>
-          <textarea id="description" name="description" value={product.description} onChange={handleChange} required />
+          <label htmlFor="description">
+            სრული აღწერა:<br />
+            <small style={{ color: 'gray' }}>თითო მახასიათებელი ახალ ხაზზე დაწერე (Enter)</small>
+          </label>
+          <textarea
+            id="description"
+            name="description"
+            value={product.description}
+            onChange={handleChange}
+            rows="6"
+            style={{ width: '100%' }}
+            required
+          />
         </div>
 
         <div>
@@ -88,6 +101,11 @@ const AdminPanel = () => {
         <div>
           <label htmlFor="image4">დამატებითი ფოტო 4:</label>
           <input type="text" id="image4" name="image4" value={product.image4} onChange={handleChange} />
+        </div>
+
+        <div>
+          <label htmlFor="contactNumber">საკონტაქტო ნომერი:</label>
+          <input type="text" id="contactNumber" name="contactNumber" value={product.contactNumber} onChange={handleChange} required />
         </div>
 
         <button type="submit">დამატება</button>

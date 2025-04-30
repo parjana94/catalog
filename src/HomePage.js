@@ -34,8 +34,6 @@ const HomePage = () => {
                   className="product-image"
                 />
                 <h3 className="product-title">{product.name}</h3>
-                <p className="product-description">{product.description}</p>
-                <p className="product-price">{product.price} ₾</p>
               </div>
             </Link>
           ))
