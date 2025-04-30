@@ -781,10 +781,74 @@
 
 /* თუ მობილურებზე იქნება ცვლილებები */
 @media (max-width: 768px) {
-  .product-card {
-    width: 90%;  /* რომ კარგად თავსებადობა იყოს მობილურებზე */
+  /* Adjust product cards layout for mobile */
+  .product-list {
+    gap: 16px;
   }
+
+  /* Make product cards wider on mobile */
+  .product-card {
+    width: 90%;  /* Increase width to fill the screen */
+    height: auto; /* Let the card height adjust dynamically */
+  }
+
+  /* Adjust image size within the product cards */
   .product-image {
-    max-width: 100%; /* სურათი მაქსიმუმის მიხედვით */
+    width: 100%;
+    height: auto; /* Keep image proportions intact */
+    max-width: 100%; /* Prevent image from overflowing */
+    margin-bottom: 12px; /* Keep space between the image and text */
+  }
+
+  /* Adjust product title and description for better mobile display */
+  .product-title {
+    font-size: 1.1rem;
+    margin-top: 8px;
+  }
+
+  .product-description {
+    font-size: 0.95rem;
+    height: auto;  /* Allow text to expand */
+    overflow: visible;  /* No text clipping */
+  }
+
+  /* Ensure proper spacing on the product card */
+  .product-price {
+    margin-top: 12px;
+    font-size: 1.1rem;
+  }
+
+  /* Centralize product details layout on smaller screens */
+  .product-detail-container {
+    padding: 20px;
+  }
+
+  .product-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .info {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .info h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .info p {
+    text-align: left;
+  }
+
+  .gallery {
+    justify-content: center;
+  }
+
+  .gallery img {
+    width: 70px;
+    height: 70px;
   }
 }
