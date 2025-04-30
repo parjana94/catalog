@@ -689,3 +689,102 @@
     font-size: 0.95rem;
   }
 }
+/* პროდუქტის ბოქსი */
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: 380px; /* ფიქსირებული მთლიანი სიმაღლე */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  object-position: center; /* ცენტრში მოთავსება */
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  margin-bottom: 8px; /* უფრო ახლოს მოვა ტექსტთან */
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 4px; /* მცირე დაშორება ზემოდან */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* პროდუქტის სურათის სტილი */
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;  /* სურათის პროპორცია უნდა შენარჩუნდეს */
+  object-position: center; /* სურათი ცენტრში იქნება */
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  margin-bottom: 8px; /* ახლოს იქნება ტექსტთან */
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* დამატებითი დარწმუნების მიზნით */
+  max-width: 95%; /* სურათი არ გასცდება კონტეინერს */
+}
+
+/* პროდუქტის ბოქსის სტილი */
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: auto; /* სიგანე ფიქსირებული, სიმაღლე მოყვება */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ზედა ნაწილი არის ნაჩვენები */
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 4px; /* ცოტა ახლოს მოვა ტექსტი */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* თუ მობილურებზე იქნება ცვლილებები */
+@media (max-width: 768px) {
+  .product-card {
+    width: 90%;  /* რომ კარგად თავსებადობა იყოს მობილურებზე */
+  }
+  .product-image {
+    max-width: 100%; /* სურათი მაქსიმუმის მიხედვით */
+  }
+}
