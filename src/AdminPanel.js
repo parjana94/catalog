@@ -103,11 +103,6 @@ const AdminPanel = () => {
           <input type="text" id="image4" name="image4" value={product.image4} onChange={handleChange} />
         </div>
 
-        <div>
-          <label htmlFor="contactNumber">საკონტაქტო ნომერი:</label>
-          <input type="text" id="contactNumber" name="contactNumber" value={product.contactNumber} onChange={handleChange} required />
-        </div>
-
         <button type="submit">დამატება</button>
       </form>
     </div>
