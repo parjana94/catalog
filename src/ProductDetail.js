@@ -58,7 +58,7 @@ const ProductDetail = () => {
         <div className="product-details">
           <h1 className="product-title">{product.name}</h1>
           <div className="product-description">{formattedDescription}</div>
-          <a href={`tel:${product.contactNumber}`} className="contact-button">
+          <a href={`tel:555770599`} className="contact-button">
             დარეკვა
           </a>
         </div>
