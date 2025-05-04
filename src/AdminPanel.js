@@ -3,6 +3,8 @@ import { ref, push, set } from 'firebase/database';
 import { db } from './firebase';
 import './styles.css';
 
+const categories = ['ტელევიზორები', 'მაცივრები', 'სარეცხი მანქანები', 'მიკროტალღურები'];
+
 const AdminPanel = () => {
   const [product, setProduct] = useState({
     name: '',
@@ -14,6 +16,7 @@ const AdminPanel = () => {
     image3: '',
     image4: '',
     contactNumber: '',
+    category: '', // ✅ Added
   });
 
   const handleChange = (e) => {
@@ -41,6 +44,7 @@ const AdminPanel = () => {
         image3: '',
         image4: '',
         contactNumber: '',
+        category: '',
       });
     } catch (error) {
       console.error('დამატების შეცდომა:', error);
@@ -76,6 +80,16 @@ const AdminPanel = () => {
             style={{ width: '100%' }}
             required
           />
+        </div>
+
+        <div>
+          <label htmlFor="category">კატეგორია:</label>
+          <select id="category" name="category" value={product.category} onChange={handleChange} required>
+            <option value="">აირჩიე კატეგორია</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
         </div>
 
         <div>

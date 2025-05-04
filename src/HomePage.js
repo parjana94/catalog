@@ -5,6 +5,9 @@ import "./styles.css";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
+  const [filteredCategory, setFilteredCategory] = useState("ყველა");
+
+  const categories = ['ყველა', 'ტელევიზორები', 'მაცივრები', 'სარეცხი მანქანები', 'მიკროტალღურები'];
 
   useEffect(() => {
     const productsRef = ref(db, "products");
@@ -20,12 +23,31 @@ const HomePage = () => {
     });
   }, []);
 
+  const filteredProducts =
+    filteredCategory === "ყველა"
+      ? products
+      : products.filter((p) => p.category === filteredCategory);
+
   return (
     <div className="container">
       <h1 className="main-title">პროდუქტების კატალოგი</h1>
+
+      <div className="filter-container">
+        <label htmlFor="categoryFilter">კატეგორიის ფილტრი:</label>
+        <select
+          id="categoryFilter"
+          value={filteredCategory}
+          onChange={(e) => setFilteredCategory(e.target.value)}
+        >
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
+        </select>
+      </div>
+
       <div className="product-list">
-        {products.length > 0 ? (
-          products.map((product) => (
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
             <Link to={`/product/${product.id}`} key={product.id} className="product-link">
               <div className="product-card">
                 <img
@@ -34,6 +56,7 @@ const HomePage = () => {
                   className="product-image"
                 />
                 <h3 className="product-title">{product.name}</h3>
+                <p className="product-category">{product.category}</p>
               </div>
             </Link>
           ))

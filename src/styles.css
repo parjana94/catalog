@@ -778,6 +778,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.filter-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categories{
+  color: rebeccapurple;
+}
 
 /* თუ მობილურებზე იქნება ცვლილებები */
 @media (max-width: 768px) {
