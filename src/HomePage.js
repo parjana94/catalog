@@ -9,7 +9,7 @@ const HomePage = () => {
 
   const categories = ['ყველა', 'ბლენდერი','გრილი','ვინტილატორი','თმის საკრეჭი','მიკროტალღური','მიქსერი',
     'მტვერსასრუტი','ყავის აპარატი','საცხობი ღუმელი','ტაფები','ტელევიზორი','ტოსტერი','უთო','ფენი','ქვაბები','ჩაიდანი',
-    'ჩოფერი','წვენსაწური','წვერის საპარსი', 'ხორცის მანქანა','სხვა',];
+    'ჩოფერი','წვენსაწური','წვერის საპარსი', 'ხორცის მანქანა','სხვა'];
 
   useEffect(() => {
     const productsRef = ref(db, "products");
@@ -58,7 +58,6 @@ const HomePage = () => {
                   className="product-image"
                 />
                 <h3 className="product-title">{product.name}</h3>
-                <p className="product-category">{product.category}</p>
               </div>
             </Link>
           ))

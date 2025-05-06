@@ -36,13 +36,14 @@
 
 /* პროდუქტის სურათის სტილი */
 .product-image {
-  width: 100%;
-  height: 180px; /* ფიქსირებული სიმაღლე */
-  object-fit: cover; /* სურათის პროპორციები არ შეიცვლება და არ მოიჭრება */
-  border-radius: 12px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-}
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* სურათს არ მოაჭრის, მაგრამ შეიძლება „background“-ით გაივსოს */
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    background-color: #fff; /* სურათის გარშემო შესაძლო „ცარიელი“ ადგილი თეთრად */
+  }
 
 /* პროდუქტის სახელი */
 .product-title {
