@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db, ref, onValue } from "./firebase";
+import { db, ref, onValue,get } from "./firebase";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
@@ -20,10 +20,11 @@ const HomePage = () => {
           id: key,
           ...data[key],
         }));
-        setProducts(productList);
+        setProducts(productList.reverse());
       }
     });
   }, []);
+
 
   const filteredProducts =
     filteredCategory === "ყველა"
